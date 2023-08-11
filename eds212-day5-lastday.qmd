@@ -4,4 +4,60 @@ format: html
 editor: visual
 ---
 
-## 
+## Some logical operators - for data wrangling
+
+-   We are going to use:
+
+    -   == (does this match?)
+
+    -   != (do these not match?)
+
+    -   \>, \<, \>=, \<=
+
+    -   &, \| (or),
+
+    ```{r}
+    library(tidyverse)
+    ```
+
+```{r}
+#This is a question
+#Does 4 match 5?
+4 == 5
+
+#Does 4 match 4?
+4 == 4
+
+#Does 4 not match 5?
+4 != 5
+
+#Does 4 not match 4?
+4 != 4
+
+#Does 4 match "4"?
+4 == "4"
+
+# With assigned variables?
+cat <- 10
+dog <- 7
+
+cat > dog
+
+#Is dog greater than can OR is cat less than 20?
+dog > cat | cat < 20
+
+#Is dog less than cat and cat = 10?
+dog < (0.5 * cat)
+
+#Is dog less than cat and cat greater than 2 and 4 greater dog?
+
+dog < cat & cat > 2 & 4 >= dog
+```
+
+## Make a bubble chart for cars 
+
+```{r}
+ggplot(data = mtcars, aes(x = wt, y = mpg, size = mpg, color = wt)) + 
+  geom_point(color = "pink") + 
+  labs(x = "Car Weight (1000 lbs)", y = "Miles per Gallon", title = "Car weight efficiency relationship")
+```
